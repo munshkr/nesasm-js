@@ -1,0 +1,38 @@
+{
+  "name": "nesasm-js",
+  "version": "1.0.0",
+  "description": "NES assembler",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "lib",
+    "README.md",
+    "LICENSE.md",
+    "package.json"
+  ],
+  "scripts": {
+    "prepack": "npm run build",
+    "build": "npm run build:release",
+    "build:debug": "mkdirp build && cd build && emcmake cmake -DCMAKE_BUILD_TYPE=Debug .. && make && cp-cli nesasm.js ../lib/nesasm.js",
+    "build:release": "mkdirp build && cd build && emcmake cmake -DCMAKE_BUILD_TYPE=Release .. && make && cp-cli nesasm.js ../lib/nesasm.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/munshkr/nesasm-js.git"
+  },
+  "keywords": [
+    "nes",
+    "assembler",
+    "emscripten"
+  ],
+  "author": "Damián Silvani",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/munshkr/nesasm-js/issues"
+  },
+  "homepage": "https://github.com/munshkr/nesasm-js#readme",
+  "devDependencies": {
+    "cp-cli": "^1.1.2",
+    "mkdirp": "^0.5.1"
+  }
+}
