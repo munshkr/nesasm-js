@@ -1,0 +1,3 @@
+[submodule "nesasm"]
+	path = nesasm
+	url = https://github.com/munshkr/nesasm.git
