@@ -8,7 +8,7 @@ async function assertThrowsAsync(fn, regExp) {
   try {
     await fn();
   } catch(e) {
-    f = () => {throw e};
+    f = () => {throw e;};
   } finally {
     assert.throws(f, regExp);
   }
@@ -19,13 +19,13 @@ describe('assemble()', () => {
     const source = fs
       .readFileSync('test/fixtures/valid.asm', { encoding: 'utf-8' });
     const binary = await assemble(source);
-    const buffer = new Buffer(binary)
+    const buffer = new Buffer(binary);
 
     const expectedBuffer = fs.readFileSync('test/fixtures/valid.nes');
-    assert(buffer.equals(expectedBuffer))
+    assert(buffer.equals(expectedBuffer));
   });
 
   it('should fail to assemble when provided an invalid program', () => {
-    assertThrowsAsync(() => assemble('[invalid assembly code]'))
+    assertThrowsAsync(() => assemble('[invalid assembly code]'));
   });
 });

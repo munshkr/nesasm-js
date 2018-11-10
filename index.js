@@ -1,4 +1,4 @@
-const Module = require('./lib/nesasm.js')
+const Module = require('./lib/nesasm.js');
 
 module.exports = (input, opts) => {
   if (!opts) opts = {};
@@ -8,7 +8,7 @@ module.exports = (input, opts) => {
   if ('function' === typeof opts['log']) {
     logCb = opts['log'];
   } else {
-    logCb = text => {};
+    logCb = () => {};
   }
 
   return new Promise((resolve, reject) => {
@@ -21,4 +21,4 @@ module.exports = (input, opts) => {
       'arguments': ['infile.asm']
     });
   });
-}
+};
