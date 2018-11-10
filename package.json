@@ -33,6 +33,8 @@
   "homepage": "https://github.com/munshkr/nesasm-js#readme",
   "devDependencies": {
     "cp-cli": "^1.1.2",
-    "mkdirp": "^0.5.1"
+    "eslint": "^5.9.0",
+    "mkdirp": "^0.5.1",
+    "mocha": "^5.2.0"
   }
 }
