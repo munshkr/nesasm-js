@@ -12,6 +12,12 @@ Main differences from the original:
 Uses [Emscripten](https://kripken.github.io/emscripten-site/) to compile C code
 into JavaScript and WebAssembly.
 
+## To-do
+
+* Better error handling
+* Support for assembler options (output listing, etc.)
+* Tests, documentation
+
 
 ## Development
 
