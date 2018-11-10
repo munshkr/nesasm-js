@@ -1,7 +1,7 @@
 {
   "name": "nesasm-js",
-  "version": "1.0.0",
-  "description": "NES assembler",
+  "version": "0.1.0",
+  "description": "A javascript port of the NESASM assembler",
   "main": "index.js",
   "files": [
     "index.js",
