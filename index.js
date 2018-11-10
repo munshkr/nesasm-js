@@ -5,7 +5,7 @@ module.exports = input => {
     Module({
       'input': input,
       'resolve': resolve,
-      'arguments': ['inputFile', 'outputFile']
+      'arguments': ['infile.asm']
     });
   });
 }

@@ -1,5 +1,5 @@
 Module['postRun'] = [];
 Module['postRun'].push(function() {
-  var output = FS.readFile('outputFile', { encoding: 'utf8' });
+  const output = FS.readFile('infile.nes');
   Module['resolve'](output);
 });

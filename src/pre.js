@@ -1,4 +1,4 @@
 Module['preRun'] = [];
 Module['preRun'].push(function() {
-  FS.writeFile('inputFile', Module['input']);
+  FS.writeFile('infile.asm', Module['input']);
 });
