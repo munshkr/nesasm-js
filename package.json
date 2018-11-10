@@ -11,6 +11,7 @@
     "package.json"
   ],
   "scripts": {
+    "test": "mocha",
     "prepack": "npm run build",
     "build": "npm run build:release",
     "build:debug": "mkdirp build && cd build && emcmake cmake -DCMAKE_BUILD_TYPE=Debug .. && make && cp-cli nesasm.js ../lib/nesasm.js",
