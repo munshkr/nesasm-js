@@ -1,10 +1,23 @@
 const Module = require('./lib/nesasm.js')
 
-module.exports = input => {
+module.exports = (input, opts) => {
+  if (!opts) opts = {};
+
+  // Print callback
+  let logCb;
+  if ('function' === typeof opts['log']) {
+    logCb = opts['log'];
+  } else {
+    logCb = text => {};
+  }
+
   return new Promise((resolve, reject) => {
     Module({
-      'input': input,
+      'print': logCb,
+      'printErr': logCb,
       'resolve': resolve,
+      'reject': reject,
+      'input': input,
       'arguments': ['infile.asm']
     });
   });
