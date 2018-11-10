@@ -12,12 +12,40 @@ Main differences from the original:
 Uses [Emscripten](https://kripken.github.io/emscripten-site/) to compile C code
 into JavaScript and WebAssembly.
 
+## Usage
+
+```javascript
+let assemble = require('nesasm-js')
+
+let source = `
+  .org $8000
+
+MyFunction:
+  lda #$FF
+  jmp MyFunction
+`;
+
+assemble(source, { log: text => console.log('stdout: ' + text) })
+  .then(buffer => console.log(buffer));
+// stdout: NES Assembler (v3.1)
+// stdout: 
+// stdout: pass 1
+// stdout: pass 2
+// > Uint8Array [
+//  78,
+//  69,
+//  83,
+//  26,
+//  0,
+//  0,
+// ... 8202 more items ]
+```
+
 ## To-do
 
 * Better error handling
 * Support for assembler options (output listing, etc.)
 * Tests, documentation
-
 
 ## Development
 
@@ -28,7 +56,6 @@ After cloning the repostory, run `npm install` to install dependencies and then
 `npm run build` to compile in Release mode (with optimizations enabled).  For
 development, it is recommended to build it with `npm run build:debug` to
 disable optimizations and minifications.
-
 
 ## License
 
